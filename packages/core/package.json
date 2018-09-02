@@ -8,6 +8,8 @@
     "email": "contactme@eduardmalakhov.com",
     "url": "https://eduardmalakhov.com"
   },
-  "access": "public",
-  "gitHead": "6b387fc89b5843dda8fb8f1def1e60de357dd96b"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "8b863d9ab4b02b55df9f28b43709a5639ca144e4"
 }
