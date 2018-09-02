@@ -1,0 +1,11 @@
+{
+  "name": "@devkitjs/core",
+  "version": "0.1.0",
+  "main": "module.js",
+  "license": "MIT",
+  "author": {
+    "name": "Eduard Malakhov",
+    "email": "contactme@eduardmalakhov.com",
+    "url": "https://eduardmalakhov.com"
+  }
+}
