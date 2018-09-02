@@ -1,6 +1,6 @@
 {
   "name": "@devkitjs/cli",
-  "version": "0.1.0",
+  "version": "0.1.5-alpha.1+7df13db",
   "main": "module.js",
   "author": {
     "name": "Eduard Malakhov",
@@ -10,5 +10,6 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "7df13dbb010fc16633f518346d43d99ba9739763"
 }
