@@ -1,0 +1,28 @@
+{
+  "name": "@devkitjs/cli",
+  "version": "0.1.5-alpha.1+7df13db",
+  "main": "module.js",
+  "author": {
+    "name": "Eduard Malakhov",
+    "email": "contactme@eduardmalakhov.com",
+    "url": "https://eduardmalakhov.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "grunt build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "7df13dbb010fc16633f518346d43d99ba9739763",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "grunt": "^1.0.3",
+    "grunt-typescript": "^0.8.0",
+    "typescript": "^3.0.3"
+  }
+}
