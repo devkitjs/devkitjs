@@ -1,5 +1,5 @@
-import { IDevKitLoader } from "./IDevKitLoader";
-import { PackageSelectorOrName, PropertyQuery, ToolsetInstaller, DevKitLoaderCore, PackageSelector } from "./DevKitLoaderCore";
+import { IDevKitLoader, DevKitLoaderCallback, PropertyQuery } from "./IDevKitLoader";
+import { DevKitLoaderCore } from "./DevKitLoaderCore";
 
 export class DevKitLoader implements IDevKitLoader {
     constructor(loaderCore: DevKitLoaderCore) {
@@ -8,50 +8,35 @@ export class DevKitLoader implements IDevKitLoader {
         this._toolsets = [];
         this._plugins = [];
     }
-
-    requireToolset(selectorString: string): IDevKitLoader;    
-    requireToolset(name: string, version: string): IDevKitLoader;
-    requireToolset(selectorStringOrName: string, version?: string): IDevKitLoader {
-        throw new Error("Method not implemented.");
+    
+    deployToolset(packageSpecifier: string, callback?: DevKitLoaderCallback): IDevKitLoader {
+        throw Error('Not implemented');
     }
-    requireToolsets(...toolsetSelectorsOrNames: PackageSelectorOrName[]): IDevKitLoader {
-        throw new Error("Method not implemented.");
+    deployToolsets(...packageSpecifiers: string[]): IDevKitLoader {
+        throw Error('Not implemented');
     }
-    requirePlugin(selectorString: string): IDevKitLoader;
-    requirePlugin(name: string, version: string): IDevKitLoader;
-    requirePlugin(selectorStringOrName: string, version?: string): IDevKitLoader{
-        throw new Error("Method not implemented.");
+    requirePlugin(packageSpecifier: string, callback?: DevKitLoaderCallback): IDevKitLoader {
+        throw Error('Not implemented');
     }
-    requirePlugins(...pluginSelectorsOrNames: PackageSelectorOrName[]): IDevKitLoader {
-        throw new Error("Method not implemented.");
+    requirePlugins(...packageSpecifiers: string[]): IDevKitLoader {
+        throw Error('Not implemented');
     }
     queryProperty(name: string, message: string): IDevKitLoader {
-        throw new Error("Method not implemented.");
+        throw Error('Not implemented');
     }
-    queryProperties(properties: PropertyQuery[]): IDevKitLoader {
-        throw new Error("Method not implemented.");
+    queryProperties(...properties: PropertyQuery[]): IDevKitLoader {
+        throw Error('Not implemented');
     }
-    load(properties: PropertyQuery[], toolsets: PackageSelectorOrName[], plugins: PackageSelectorOrName[]): IDevKitLoader {
-        this._loaderCore.load(properties, toolsets, plugins);
-
-        return this;
+    
+    load(properties: PropertyQuery[], toolsets: string[], plugins: string[], callback?: DevKitLoaderCallback): IDevKitLoader {
+        throw Error('Not implemented');
     }
-    ready(toolsetInstaller: ToolsetInstaller): void {
-        this._loaderCore.ready(toolsetInstaller);
-    }
-
-    private _tryParseSelectorString(selectorStringOrName: string): PackageSelector {
-        const regexp = /(?<scope>@\w+\/)(?<name>\w+@)(?<version>[\w\d]+)/;
-
-        const matches = selectorStringOrName.match(regexp);
-
-        return {
-            name: 
-        };
+    ready(callback: DevKitLoaderCallback): void {
+        throw Error('Not implemented');
     }
 
     private _loaderCore: DevKitLoaderCore;
     private _properties: PropertyQuery[];
-    private _toolsets: PackageSelector[];
-    private _plugins: PackageSelector[];
+    private _toolsets: string[];
+    private _plugins: string[];
 }
