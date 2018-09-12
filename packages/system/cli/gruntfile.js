@@ -5,7 +5,7 @@ module.exports = grunt => {
         ts: {
             default: {
                 src: ['src/**/*.ts'],
-                tsconfig: true
+                tsconfig: '../../../tsconfig.json'
             }
         }
     });
