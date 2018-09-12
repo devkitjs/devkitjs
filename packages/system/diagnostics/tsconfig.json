@@ -1,4 +1,10 @@
 {
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"dist/**/*"
+	],
 	"compilerOptions": {
 		"declaration": true,
 		"experimentalDecorators": true,
@@ -10,16 +16,9 @@
 		"sourceMap": true,
 		"target": "es6",
         "lib": ["es2016"],
-        "extendedDiagnostics": true,
         "traceResolution": true,    
 		"types": [
 			"node"
-		],
-		"include": [
-			"src/**/*.ts"
-		],
-		"exclude": [
-			"dist/**/*"
 		]
     }
 }
