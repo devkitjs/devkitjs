@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"outDir": "./dist",
+		"rootDir": "src",
+		"sourceMap": true,
+		"target": "es6",
+        "lib": ["es2016"],
+        "extendedDiagnostics": true,
+        "traceResolution": true,    
+		"types": [
+			"node"
+		],
+		"include": [
+			"src/**/*.ts"
+		],
+		"exclude": [
+			"dist/**/*"
+		]
+    }
+}

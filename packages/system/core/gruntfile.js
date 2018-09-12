@@ -1,3 +1,16 @@
-require('@babel/register');
+const path = require('path');
 
-module.exports = require('../../../gruntfile.babel.js');
+module.exports = grunt => {
+    grunt.initConfig({
+        ts: {
+            default: {
+                src: ['src/**/*.ts'],
+                tsconfig: true
+            }
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-ts');
+
+    grunt.registerTask('build', ['ts']);
+}
