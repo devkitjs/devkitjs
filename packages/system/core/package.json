@@ -1,5 +1,5 @@
 {
-  "name": "@devkitjs/core",
+  "name": "@devkit/core",
   "version": "0.1.4",
   "main": "module.js",
   "license": "MIT",

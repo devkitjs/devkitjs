@@ -8,3 +8,7 @@ export interface IEventLoggerEx extends IEventLogger {
     logWarning(message: string, ...parameters: any[]): void;
     logError(message: string, ...parameters: any[]): void;
 }
+
+export interface IEventLoggerFactoryEx {
+    constructEventLoggerEx();
+}

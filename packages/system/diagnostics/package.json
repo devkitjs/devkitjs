@@ -1,14 +1,15 @@
 {
   "name": "@devkit/diagnostics",
   "version": "0.1.0",
-  "main": "module.js",
+  "main": "dist/module.js",
   "author": {
     "name": "Eduard Malakhov",
     "email": "contactme@eduardmalakhov.com",
     "url": "https://eduardmalakhov.com"
   },
   "scripts": {
-    "build": "grunt build"
+    "build": "grunt build",
+    "prepublish": "grunt build"
   },
   "publishConfig": {
     "access": "public"

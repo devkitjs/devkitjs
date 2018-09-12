@@ -1,7 +1,7 @@
 {
-  "name": "@devkitjs/cli",
+  "name": "@devkit/cli",
   "version": "0.1.5-alpha.1+7df13db",
-  "main": "module.js",
+  "main": "dist/module.js",
   "author": {
     "name": "Eduard Malakhov",
     "email": "contactme@eduardmalakhov.com",
@@ -27,6 +27,7 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
+    "@devkit/diagnostics": "^0.1.0",
     "commander": "^2.18.0"
   }
 }

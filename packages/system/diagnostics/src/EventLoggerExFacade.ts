@@ -45,6 +45,10 @@ export class EventLoggerExFacade implements IEventLoggerEx {
         this._innerLogger.logEvent(eventCategory, tag, message);
     }
 
+    public static wrap(logger: IEventLogger): EventLoggerExFacade {
+        return new EventLoggerExFacade(logger); 
+    }
+
     private _logTraceWithTag(tag: string, message: string): void {
         this._innerLogger.logEvent(EventCategory.TRACE, tag, message);
     }
