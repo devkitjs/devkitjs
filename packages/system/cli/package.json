@@ -28,6 +28,9 @@
   },
   "dependencies": {
     "@devkit/diagnostics": "^0.1.0",
-    "commander": "^2.18.0"
+    "@devkit/infrastructure": "^0.1.4",
+    "commander": "^2.18.0",
+    "inversify": "^4.13.0",
+    "reflect-metadata": "^0.1.12"
   }
 }

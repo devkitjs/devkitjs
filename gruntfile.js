@@ -9,7 +9,7 @@ module.exports = grunt => {
             default: {
                 src: ['src/**/*.ts'],
                 outDir: 'dist',
-                tsconfig: tsconfigPath
+                tsconfig: true
             },
             options: {
                 tsCacheDir: tscacheDir

@@ -1,11 +1,11 @@
 export enum EventCategory {
-    TRACE = 0,
-    WARNING = 1,
-    ERROR = 2
+    TRACE = 'TRACE',
+    WARNING = 'WARNING',
+    ERROR = 'ERROR'
 }
 
 export interface IEventLogger {
-    logEvent(eventCategory: EventCategory, tag: string, message: string): void;
+    logEvent(source: string, eventCategory: EventCategory, message: string, ...parameters: any[]): void;
 }
 
 export interface IEventLoggerFactory {

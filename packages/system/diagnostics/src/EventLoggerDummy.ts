@@ -1,13 +1,17 @@
 import { IEventLogger, EventCategory, IEventLoggerFactory } from './IEventLogger';
 
-class EventLoggerDummy implements IEventLogger {
-    logEvent(eventCategory: EventCategory, tag: string, message: string, ...parameters: any[]): void {
+export class EventLoggerDummy implements IEventLogger {
+    logEvent(source: string, eventCategory: EventCategory, message: string, ...parameters: any[]): void {
 
     }
+
+    static Singleton: EventLoggerDummy = new EventLoggerDummy();
 }
 
 export class EventLoggerDummyFactory implements IEventLoggerFactory {
     constructEventLogger(): IEventLogger {
-        return new EventLoggerDummy();
+        return EventLoggerDummy.Singleton;
     }
+
+    static Singleton: EventLoggerDummyFactory = new EventLoggerDummyFactory();
 }

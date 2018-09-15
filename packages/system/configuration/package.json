@@ -1,0 +1,22 @@
+{
+  "name": "@devkit/configuration",
+  "version": "0.1.4",
+  "description": "> TODO: description",
+  "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
+  "homepage": "https://github.com/devkitjs/devkitjs#readme",
+  "license": "ISC",
+  "main": "dist/module.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devkitjs/devkitjs.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/devkitjs/devkitjs/issues"
+  }
+}

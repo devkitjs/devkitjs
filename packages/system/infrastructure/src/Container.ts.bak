@@ -1,0 +1,73 @@
+import { Container as InversifyContainer, interfaces as inversifyInterfaces } from 'inversify';
+
+export class Container implements inversifyInterfaces.Container {
+    guid: string;
+    parent: inversifyInterfaces.Container;
+    options: inversifyInterfaces.ContainerOptions;
+    bind<T>(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<T> | inversifyInterfaces.Abstract<T>): inversifyInterfaces.BindingToSyntax<T> {
+        return this._innerContainer.bind(serviceIdentifier);
+    }
+    rebind<T>(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<T> | inversifyInterfaces.Abstract<T>): inversifyInterfaces.BindingToSyntax<T> {
+        return this._innerContainer.rebind(serviceIdentifier);
+    }
+    unbind(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<any> | inversifyInterfaces.Abstract<any>): void {
+        return this._innerContainer.unbind(serviceIdentifier);
+    }
+    unbindAll(): void {
+        return this._innerContainer.unbindAll(serviceIdentifier);
+    }
+    isBound(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<any> | inversifyInterfaces.Abstract<any>): boolean {
+        return this._innerContainer.isBound(serviceIdentifier);
+    }
+    isBoundNamed(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<any> | inversifyInterfaces.Abstract<any>, named: string | number | symbol): boolean {
+        return this._innerContainer.isBoundNamed(serviceIdentifier);
+    }
+    isBoundTagged(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<any> | inversifyInterfaces.Abstract<any>, key: string | number | symbol, value: any): boolean {
+        return this._innerContainer.isBoundTagged(serviceIdentifier);
+    }
+    get<T>(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<T> | inversifyInterfaces.Abstract<T>): T {
+        return this._innerContainer.get(serviceIdentifier);
+    }
+    getNamed<T>(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<T> | inversifyInterfaces.Abstract<T>, named: string | number | symbol): T {
+        return this._innerContainer.getNamed(serviceIdentifier);
+    }
+    getTagged<T>(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<T> | inversifyInterfaces.Abstract<T>, key: string | number | symbol, value: any): T {
+        return this._innerContainer.getTagged(serviceIdentifier);
+    }
+    getAll<T>(serviceIdentifier: string | symbol | inversifyInterfaces.Newable<T> | inversifyInterfaces.Abstract<T>): T[] {
+        return this._innerContainer.getAll(serviceIdentifier);
+    }
+    resolve<T>(constructorFunction: inversifyInterfaces.Newable<T>): T {
+        return this._innerContainer.resolve(serviceIdentifier);
+    }
+    load(...modules: inversifyInterfaces.ContainerModule[]): void {
+        return this._innerContainer.load(serviceIdentifier);
+    }
+    loadAsync(...modules: inversifyInterfaces.AsyncContainerModule[]): Promise<void> {
+        return this._innerContainer.loadAsync(serviceIdentifier);
+    }
+    unload(...modules: inversifyInterfaces.ContainerModule[]): void {
+        return this._innerContainer.unload(serviceIdentifier);
+    }
+    applyCustomMetadataReader(metadataReader: inversifyInterfaces.MetadataReader): void {
+        return this._innerContainer.applyCustomMetadataReader(serviceIdentifier);
+    }
+    applyMiddleware(...middleware: inversifyInterfaces.Middleware[]): void {
+        return this._innerContainer.applyMiddleware(serviceIdentifier);
+    }
+    snapshot(): void {
+        return this._innerContainer.snapshot(serviceIdentifier);
+    }
+    restore(): void {
+        return this._innerContainer.restore(serviceIdentifier);
+    }
+    createChild(): inversifyInterfaces.Container {
+        return this._innerContainer.createChild(serviceIdentifier);
+    }
+
+    private _innerContainer: InversifyContainer;
+}
+
+export interface BindingToSyntax<T> extends inversifyInterfaces.BindingToSyntax<T> {
+    toExtension(modulePath: string, ...services: string[]);
+}

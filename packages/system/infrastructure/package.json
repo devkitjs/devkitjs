@@ -1,0 +1,38 @@
+{
+  "name": "@devkit/infrastructure",
+  "version": "0.1.4",
+  "description": "> TODO: description",
+  "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
+  "homepage": "https://github.com/devkitjs/devkitjs#readme",
+  "license": "ISC",
+  "main": "dist/module.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devkitjs/devkitjs.git"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/devkitjs/devkitjs/issues"
+  },
+  "dependencies": {
+    "@devkit/diagnostics": "^0.1.0",
+    "@types/node": "^10.9.4",
+    "grunt": "^1.0.3",
+    "grunt-ts": "^6.0.0-beta.21",
+    "inversify": "^4.13.0",
+    "typescript": "^3.0.3"
+  }
+}

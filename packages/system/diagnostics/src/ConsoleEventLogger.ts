@@ -1,14 +1,21 @@
 import { IEventLogger, EventCategory, IEventLoggerFactory } from "./IEventLogger";
-import { IEventLoggerFactoryEx } from "./IEventLoggerEx";
+import { IEventLoggerExFactory } from "./IEventLoggerEx";
 import { EventLoggerExFacade } from "./EventLoggerExFacade";
+import { injectable } from 'inversify';
 
-class ConsoleEventLogger implements IEventLogger {
-    logEvent(eventCategory: EventCategory, tag: string, message: string, ...parameters: any[]): void {
-        console.log(message);
+@injectable()
+export class ConsoleEventLogger implements IEventLogger {
+    logEvent(source: string, eventCategory: EventCategory, message: string, ...parameters: any[]): void {
+        if (source) {
+            console.log(`${eventCategory} ${source}: ${message}`);
+        } else {
+            console.log(message);
+        }
     }
 }
 
-export class ConsoleEventLoggerFactory implements IEventLoggerFactory, IEventLoggerFactoryEx {
+@injectable()
+export class ConsoleEventLoggerFactory implements IEventLoggerFactory, IEventLoggerExFactory {
     constructEventLogger(): IEventLogger {
         return new ConsoleEventLogger();
     }
